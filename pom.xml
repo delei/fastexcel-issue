@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.deleiguo.fastexcel</groupId>
+    <artifactId>fastexcel-issue</artifactId>
+    <version>1.2.0</version>
+
+    <packaging>jar</packaging>
+
+    <name>fastexcel-issue</name>
+    <description>Fastexcel Issue Example</description>
+    <url>https://github.com/delei/fastexcel-issue</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
+        <maven.test.skip>true</maven.test.skip>
+        <fastexcel.version>1.2.0</fastexcel.version>
+        <fastjson2.version>2.0.51</fastjson2.version>
+        <poi.version>5.3.0</poi.version>
+        <poi-ooxml.version>5.3.0</poi-ooxml.version>
+        <lombok.version>1.18.38</lombok.version>
+        <hutool.version>5.8.36</hutool.version>
+        <logback.version>1.2.13</logback.version>
+        <slf4j.version>1.7.36</slf4j.version>
+        <testng.version>7.5.1</testng.version>
+        <spring-boot-starter-test.version>2.7.18</spring-boot-starter-test.version>
+        <commons-csv.version>1.14.0</commons-csv.version>
+        <commons-io.version>2.18.0</commons-io.version>
+    </properties>
+
+    <scm>
+        <url>https://github.com/delei/fastexcel-issue</url>
+        <connection>scm:git:https://git@github.com/delei/fastexcel-issue.git</connection>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.idev.excel</groupId>
+            <artifactId>fastexcel-core</artifactId>
+            <version>${fastexcel.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-csv</artifactId>
+                    <groupId>org.apache.commons</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${commons-csv.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-io</artifactId>
+                    <groupId>commons-io</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>${fastjson2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-starter-test.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+            <testResource>
+                <directory>src/main/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
+</project>
