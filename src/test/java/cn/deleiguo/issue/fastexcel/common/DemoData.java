@@ -2,18 +2,21 @@ package cn.deleiguo.issue.fastexcel.common;
 
 import cn.idev.excel.annotation.ExcelIgnore;
 import cn.idev.excel.annotation.ExcelProperty;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
 /**
  * @author deleiguo
  */
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
 public class DemoData {
     @ExcelProperty("字符串标题")
     private String string;
