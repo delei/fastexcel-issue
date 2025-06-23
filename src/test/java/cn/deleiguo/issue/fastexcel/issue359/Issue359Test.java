@@ -1,7 +1,7 @@
 package cn.deleiguo.issue.fastexcel.issue359;
 
-import cn.deleiguo.issue.fastexcel.common.CustomReadListener;
-import cn.deleiguo.issue.fastexcel.common.DemoData;
+import cn.deleiguo.issue.common.CustomReadListener;
+import cn.deleiguo.issue.common.DemoData;
 import cn.deleiguo.issue.util.TestFileUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
@@ -24,7 +24,7 @@ public class Issue359Test {
         List<DemoData> dataList = FastExcel.read(file, DemoData.class, new CustomReadListener())
                 .excelType(ExcelTypeEnum.XLSX)
                 .doReadAllSync();
-        Assertions.assertEquals(10,dataList.size());
+        Assertions.assertEquals(10, dataList.size());
         dataList.forEach(System.out::println);
     }
 
@@ -36,11 +36,11 @@ public class Issue359Test {
                 .doWrite(demoData(10));
     }
 
-    private List<DemoData> demoData(int size){
-        List<DemoData> dataList= new ArrayList<>();
-        for(int i =0;i<size;i++){
+    private List<DemoData> demoData(int size) {
+        List<DemoData> dataList = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
             DemoData demoData = new DemoData();
-            demoData.setString("String"+i);
+            demoData.setString("String" + i);
             demoData.setDate(DateUtil.date());
             demoData.setDoubleData(RandomUtil.randomDouble());
             dataList.add(demoData);
