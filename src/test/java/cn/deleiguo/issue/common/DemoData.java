@@ -5,6 +5,7 @@ import cn.idev.excel.annotation.ExcelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -19,6 +20,8 @@ public class DemoData {
     private Date date;
     @ExcelProperty("数字标题")
     private Double doubleData;
+    @ExcelProperty("数值标题")
+    private BigDecimal bigDecimalData;
     /**
      * 忽略这个字段
      */
