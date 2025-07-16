@@ -32,6 +32,7 @@
         <spring-boot-starter-test.version>2.7.18</spring-boot-starter-test.version>
         <commons-csv.version>1.14.0</commons-csv.version>
         <commons-io.version>2.18.0</commons-io.version>
+        <hibernate-validator.version>6.2.5.Final</hibernate-validator.version>
     </properties>
 
     <scm>
@@ -99,7 +100,7 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-        
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -112,6 +113,13 @@
             <version>${spring-boot-starter-test.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
