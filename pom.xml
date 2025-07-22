@@ -22,8 +22,8 @@
         <maven.test.skip>true</maven.test.skip>
         <fastexcel.version>1.2.0</fastexcel.version>
         <fastjson2.version>2.0.51</fastjson2.version>
-        <poi.version>5.3.0</poi.version>
-        <poi-ooxml.version>5.3.0</poi-ooxml.version>
+        <poi.version>5.4.1</poi.version>
+        <poi-ooxml.version>5.4.1</poi-ooxml.version>
         <lombok.version>1.18.38</lombok.version>
         <hutool.version>5.8.36</hutool.version>
         <logback.version>1.2.13</logback.version>
@@ -57,6 +57,14 @@
                 <exclusion>
                     <artifactId>commons-csv</artifactId>
                     <groupId>org.apache.commons</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>poi</artifactId>
+                    <groupId>org.apache.poi</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>poi-ooxml</artifactId>
+                    <groupId>org.apache.poi</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -118,6 +126,17 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${poi-ooxml.version}</version>
         </dependency>
 
     </dependencies>
