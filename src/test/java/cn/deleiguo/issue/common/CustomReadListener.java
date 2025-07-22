@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class CustomReadListener extends AnalysisEventListener<DemoData> {
     @Override
     public void invoke(DemoData data, AnalysisContext context) {
-        log.info("解析到一条数据:{}", JSON.toJSONString(data));
+        log.info("Parsed a data row:{}", JSON.toJSONString(data));
     }
 
     @Override
