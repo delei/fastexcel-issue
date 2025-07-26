@@ -2,6 +2,7 @@ package cn.deleiguo.issue.common;
 
 import cn.idev.excel.annotation.ExcelIgnore;
 import cn.idev.excel.annotation.ExcelProperty;
+import cn.idev.excel.annotation.format.NumberFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,8 +25,9 @@ public class DemoData {
     private Double doubleData;
 
     @ExcelProperty("BigDecimalTitle")
+    @NumberFormat("#,##0.00")
     private BigDecimal bigDecimalData;
-    
+
     @ExcelIgnore
     private String ignore;
 }
