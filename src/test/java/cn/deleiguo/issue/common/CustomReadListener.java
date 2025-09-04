@@ -22,6 +22,7 @@ public class CustomReadListener extends AnalysisEventListener<DemoData> {
 
     @Override
     public void doAfterAllAnalysed(AnalysisContext context) {
+        log.info("All data analysed");
     }
 
 }
