@@ -21,12 +21,19 @@ public class Issue564Test {
     @Test
     void testFill01() {
         File templateFile = TestFileUtil.readFile("issue/fastexcel/issue564/list.xlsx");
+
         try (ExcelWriter excelWriter = FastExcel.write(TestFileUtil.createNewFile("issue/result-564.xlsx"))
+                // register a custom SheetWriteHandler
+                .registerWriteHandler(new CustomSheetNoWriteHandler())
                 .withTemplate(templateFile)
                 .inMemory(true)
                 .build()) {
 
-            List<String> sheets = Arrays.asList("Sheet1", "Sheet2", "Sheet3");
+            List<String> sheets = Arrays.asList("Sheet2", "Sheet3");
+
+            WriteSheet customSheet = FastExcel.writerSheet(0, "Sheet1").build();
+            excelWriter.fill(demoData(1), customSheet);
+
             FillConfig fillConfig = FillConfig.builder().forceNewRow(Boolean.TRUE).build();
             // 数据sheet
             int sheetNo = 0;
