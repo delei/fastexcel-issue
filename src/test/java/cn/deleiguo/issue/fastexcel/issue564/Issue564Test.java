@@ -19,7 +19,7 @@ import java.util.List;
 public class Issue564Test {
 
     @Test
-    void testFill01() {
+    void testFill() {
         File templateFile = TestFileUtil.readFile("issue/fastexcel/issue564/list.xlsx");
 
         try (ExcelWriter excelWriter = FastExcel.write(TestFileUtil.createNewFile("issue/result-564.xlsx"))
