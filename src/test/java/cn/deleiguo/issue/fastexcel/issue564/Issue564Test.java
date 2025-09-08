@@ -38,11 +38,10 @@ public class Issue564Test {
             // 数据sheet
             int sheetNo = 0;
             for (String sheetName : sheets) {
-                // 需要根据name来填充相应的数据
+                // 根据 sheet name 来填充
                 WriteSheet writeSheet = FastExcel.writerSheet(sheetName)
                         // .sheetNo(sheetNo++)
                         .build();
-                // 填充目录信息
                 excelWriter.fill(demoData(5), fillConfig, writeSheet);
             }
         }
