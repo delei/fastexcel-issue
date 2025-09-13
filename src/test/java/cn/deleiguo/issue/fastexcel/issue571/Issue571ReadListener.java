@@ -15,7 +15,6 @@ public class Issue571ReadListener extends AnalysisEventListener<DemoData> {
     @Override
     public void invoke(DemoData data, AnalysisContext context) {
         log.info("Parsed a data row:{}", JSON.toJSONString(data));
-        // 有公式优先存公式
         Map<Integer, Cell> cellMap = context.readRowHolder().getCellMap();
         for (Map.Entry<Integer, Cell> entry : cellMap.entrySet()) {
             CellData cellData = (CellData) entry.getValue();
